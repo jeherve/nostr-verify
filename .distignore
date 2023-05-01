@@ -1,0 +1,13 @@
+# Directories
+/.wordpress-org
+/.git
+/.github
+/vendor
+/wordpress
+
+# Files
+.distignore
+.gitignore
+.phpcs.xml.dist
+.editorconfig
+composer.lock
