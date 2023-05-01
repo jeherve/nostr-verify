@@ -218,7 +218,7 @@ function add_profile_section( $user ) {
 									),
 								)
 							),
-							esc_url( 'https://nostrcheck.me/converter/' )
+							esc_url( 'https://damus.io/key/' )
 						);
 						?>
 					</p>
