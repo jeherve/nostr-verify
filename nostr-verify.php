@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Nostr Verify
- * Plugin URI: https://jeremy.hu/nostr-verify/
+ * Plugin URI: https://jeremy.hu/nostr-verify-wordpress-plugin/
  * Description: Verify yourself with Nostr, using NIP-05
  * Author: Jeremy Herve
  * Version: 1.1.0
