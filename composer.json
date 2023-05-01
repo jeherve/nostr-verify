@@ -1,0 +1,18 @@
+{
+    "name": "jeherve/nostr-verify",
+    "description": "Verify yourself with Nostr, using NIP-05",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "config": {
+        "allow-plugins": true
+    },
+    "allow-plugins": {
+        "composer/installers": true
+    },
+    "require": {
+        "composer/installers": "^2.0"
+    },
+    "extra": {
+        "installer-name": "nostr-verify"
+    }
+}
