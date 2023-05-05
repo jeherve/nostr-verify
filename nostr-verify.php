@@ -4,7 +4,7 @@
  * Plugin URI: https://jeremy.hu/nostr-verify-wordpress-plugin/
  * Description: Verify yourself with Nostr, using NIP-05
  * Author: Jeremy Herve
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author URI: https://jeremy.hu/
  * License: GPL2+
  * Text Domain: nostr-verify
@@ -124,6 +124,12 @@ function render_nostr_document( $wp ) {
 		)
 	);
 
+	// If we do not have any data, bail and redirect to homepage.
+	if ( empty( $users ) ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
+
 	// Build the array of Nostr names and public keys.
 	$names = array();
 	foreach ( $users as $user ) {
@@ -184,8 +190,9 @@ function add_profile_section( $user ) {
 						printf(
 							wp_kses(
 								/* translators: %s is a link to Nostr. */
-								__( 'This will be the first part of your internet identifier (an email-like address) on Nostr. It could be <code>bob</code> for example. Your identifier on nostr (also known as "NIP-05") will then be <code>bob@%1$s</code>.', 'nostr-verify' ),
+								__( 'This will be the first part of your internet identifier (an email-like address) on Nostr. It could be <code>bob</code> for example. Your identifier on nostr (also known as "NIP-05") will then be <code>bob@%1$s</code>.<br/>If you’d like your identifier to be simply <code>@%1$s</code>, with no username, enter <code>_</code> in this field.', 'nostr-verify' ),
 								array(
+									'br'   => array(),
 									'code' => array(),
 								)
 							),
