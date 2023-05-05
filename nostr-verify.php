@@ -4,7 +4,7 @@
  * Plugin URI: https://jeremy.hu/nostr-verify-wordpress-plugin/
  * Description: Verify yourself with Nostr, using NIP-05
  * Author: Jeremy Herve
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author URI: https://jeremy.hu/
  * License: GPL2+
  * Text Domain: nostr-verify
