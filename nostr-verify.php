@@ -124,6 +124,12 @@ function render_nostr_document( $wp ) {
 		)
 	);
 
+	// If we do not have any data, bail and redirect to homepage.
+	if ( empty( $users ) ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
+
 	// Build the array of Nostr names and public keys.
 	$names = array();
 	foreach ( $users as $user ) {
