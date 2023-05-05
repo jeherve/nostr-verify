@@ -190,8 +190,9 @@ function add_profile_section( $user ) {
 						printf(
 							wp_kses(
 								/* translators: %s is a link to Nostr. */
-								__( 'This will be the first part of your internet identifier (an email-like address) on Nostr. It could be <code>bob</code> for example. Your identifier on nostr (also known as "NIP-05") will then be <code>bob@%1$s</code>.', 'nostr-verify' ),
+								__( 'This will be the first part of your internet identifier (an email-like address) on Nostr. It could be <code>bob</code> for example. Your identifier on nostr (also known as "NIP-05") will then be <code>bob@%1$s</code>.<br/>If you’d like your identifier to be simply <code>@%1$s</code>, with no username, enter <code>_</code> in this field.', 'nostr-verify' ),
 								array(
+									'br'   => array(),
 									'code' => array(),
 								)
 							),
