@@ -16,8 +16,6 @@ Nostr Verify is a WordPress plugin that allows you to verify yourself with Nostr
 
 == Installation ==
 
-### Installation
-
 - Go to Plugins > Add New.
 - Search for "Nostr Verify".
 - Install and activate the plugin.
@@ -27,7 +25,7 @@ Once you've saved your changes, you should be verified with your Nostr client of
 
 == Changelog ==
 
-### 1.2.0
+### 1.2.0 - 2023-05-31
 
 #### Changed
 
