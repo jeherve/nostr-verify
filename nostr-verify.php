@@ -20,7 +20,7 @@ namespace Jeherve\NostrVerify;
  * Add rewrite rules
  */
 function generate_rewrite_rules() {
-	add_rewrite_rule( '^.well-known/nostr.json', 'index.php?well-known=nostr', 'top' );
+	add_rewrite_rule( '^\\.well-known/nostr\\.json', 'index.php?well-known=nostr', 'top' );
 }
 add_action( 'init', __NAMESPACE__ . '\generate_rewrite_rules' );
 
