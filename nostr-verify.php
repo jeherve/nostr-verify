@@ -154,10 +154,7 @@ function render_nostr_document( $wp ) {
 	header( 'Access-Control-Allow-Origin: *' );
 	header( 'Content-Type: application/jrd+json; charset=' . get_bloginfo( 'charset' ), true );
 
-	echo wp_json_encode( $info );
-
-	// stop exactly here!
-	exit;
+	wp_send_json( $info );
 }
 add_action( 'parse_request', __NAMESPACE__ . '\render_nostr_document' );
 
