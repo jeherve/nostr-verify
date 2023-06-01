@@ -25,6 +25,12 @@ Once you've saved your changes, you should be verified with your Nostr client of
 
 == Changelog ==
 
+### Next
+
+#### Changed
+
+- Various code standardization improvements.
+
 ### 1.2.0 - 2023-05-31
 
 #### Changed
