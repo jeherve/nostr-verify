@@ -81,7 +81,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ 
  *
  * @return array
  */
-add_action(
+add_filter(
 	'query_vars',
 	function ( $vars ) {
 		if ( ! in_array( 'well-known', $vars, true ) ) {
@@ -96,7 +96,7 @@ add_action(
 /**
  * Parse the nostr request and render the document.
  *
- * @param WP $wp WordPress request context.
+ * @param \WP $wp WordPress request context.
  */
 function render_nostr_document( $wp ) {
 	// check if it is a nostr request or not.
@@ -164,7 +164,7 @@ add_action( 'parse_request', __NAMESPACE__ . '\render_nostr_document' );
 /**
  * Add a section to user's profile to add their Nostr name and public key.
  *
- * @param WP_User $user User instance to output for.
+ * @param \WP_User $user User instance to output for.
  *
  * @return void
  */
