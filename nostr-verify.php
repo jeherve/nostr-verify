@@ -22,7 +22,7 @@ namespace Jeherve\NostrVerify;
 function generate_rewrite_rules() {
 	add_rewrite_rule( '^.well-known/nostr.json', 'index.php?well-known=nostr', 'top' );
 }
-add_action( 'init', __NAMESPACE__ . '\generate_rewrite_rules' );
+add_action( 'init', __NAMESPACE__ . '\\generate_rewrite_rules' );
 
 /**
  * Flush rewrite rules
@@ -31,8 +31,8 @@ function flush_rewrite_rules() {
 	generate_rewrite_rules();
 	\flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, __NAMESPACE__ . '\flush_rewrite_rules' );
-register_deactivation_hook( __FILE__, '\flush_rewrite_rules' );
+register_activation_hook( __FILE__, __NAMESPACE__ . '\\flush_rewrite_rules' );
+register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 
 /**
  * On plugin activation, redirect to the profile page so folks can enter their Nostr info.
@@ -53,7 +53,7 @@ function redirect_to_settings( $plugin, $network_wide ) {
 
 	wp_safe_redirect( get_edit_profile_url() . '#nostr-verify' );
 }
-add_action( 'activated_plugin', __NAMESPACE__ . '\redirect_to_settings', 10, 2 );
+add_action( 'activated_plugin', __NAMESPACE__ . '\\redirect_to_settings', 10, 2 );
 
 /**
  * Add a link to the plugin's settings page
@@ -72,7 +72,7 @@ function add_settings_link( $links ) {
 
 	return $links;
 }
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ . '\add_settings_link' );
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ . '\\add_settings_link' );
 
 /**
  * Add query vars
@@ -156,7 +156,7 @@ function render_nostr_document( $wp ) {
 
 	wp_send_json( $info );
 }
-add_action( 'parse_request', __NAMESPACE__ . '\render_nostr_document' );
+add_action( 'parse_request', __NAMESPACE__ . '\\render_nostr_document' );
 
 /**
  * Add a section to user's profile to add their Nostr name and public key.
@@ -232,8 +232,8 @@ function add_profile_section( $user ) {
 	</table>
 	<?php
 }
-add_action( 'show_user_profile', __NAMESPACE__ . '\add_profile_section' );
-add_action( 'edit_user_profile', __NAMESPACE__ . '\add_profile_section' );
+add_action( 'show_user_profile', __NAMESPACE__ . '\\add_profile_section' );
+add_action( 'edit_user_profile', __NAMESPACE__ . '\\add_profile_section' );
 
 /**
  * Save the Nostr name and public key when the user profile is updated.
@@ -252,5 +252,5 @@ function save_nostr_profile_info( $user_id ) {
 	update_user_meta( $user_id, 'nostr_verify_name', $nostr_name );
 	update_user_meta( $user_id, 'nostr_verify_public_key', $nostr_key );
 }
-add_action( 'personal_options_update', __NAMESPACE__ . '\save_nostr_profile_info' );
-add_action( 'edit_user_profile_update', __NAMESPACE__ . '\save_nostr_profile_info' );
+add_action( 'personal_options_update', __NAMESPACE__ . '\\save_nostr_profile_info' );
+add_action( 'edit_user_profile_update', __NAMESPACE__ . '\\save_nostr_profile_info' );
