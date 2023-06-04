@@ -102,7 +102,7 @@ function render_nostr_document( $wp ) {
 	// check if it is a nostr request or not.
 	if (
 		! array_key_exists( 'well-known', $wp->query_vars )
-		|| 'nostr' !== $wp->query_vars['well-known']
+		|| 'nostr.json' !== $wp->query_vars['well-known']
 	) {
 		return;
 	}
