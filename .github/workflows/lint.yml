@@ -23,7 +23,7 @@ jobs:
         experimental: [ false ]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -72,7 +72,7 @@ jobs:
     timeout-minutes: 5 # Successful runs seem to take ~1 minute. Let's stay on the safe side.
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -118,7 +118,7 @@ jobs:
     timeout-minutes: 5 # Successful runs seem to take ~1 minute. Let's stay on the safe side.
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
