@@ -10,7 +10,7 @@ jobs:
     name: Deploy new tag to WordPress.org
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
